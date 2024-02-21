@@ -66,19 +66,31 @@ function ChatPage() {
         <MessagesSidebar />
         <div className='chat-container'>
           <div className='chat-messages-container'>
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`chat-message ${
-                  message.usernameWhoSends === user.username
-                    ? 'own-message'
-                    : 'other-message'
-                }`}
-              >
-                <h4 className='message-sender'>{message.usernameWhoSends}</h4>
-                <p className='message-content'>{message.message}</p>
-              </div>
-            ))}
+            {messages.map((message, index) => {
+              const createdAtDate = new Date(message.created_at);
+              const formattedDate = createdAtDate.toLocaleDateString();
+              const formattedTime = createdAtDate.toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+              });
+
+              return (
+                <div
+                  key={index}
+                  className={`chat-message ${
+                    message.usernameWhoSends === user.username
+                      ? 'own-message'
+                      : 'other-message'
+                  }`}
+                >
+                  <h4 className='message-sender'>{message.usernameWhoSends}</h4>
+                  <p className='message-content'>{message.message}</p>
+                  <p className='message-time'>
+                    {formattedDate} {formattedTime}
+                  </p>
+                </div>
+              );
+            })}
           </div>
           <div className='chat-send-message'>
             <input

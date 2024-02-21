@@ -526,7 +526,7 @@ select option {
   align-items: center;
   gap: 1rem;
   padding: 0.625rem;
-  border: solid 2px #7b90aa;
+  border: solid 1px #7b90aa;
   border-radius: 0.625rem;
   cursor: pointer;
   min-width: 10rem;
@@ -552,6 +552,7 @@ select option {
 
 .chat-page-wrapper {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .chat-page {
@@ -588,6 +589,11 @@ select option {
 .own-message {
   background-color: #e5edf6;
   align-self: flex-end;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  margin-top: 0.3125rem;
 }
 
 .chat-send-message {
