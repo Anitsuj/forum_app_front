@@ -15,6 +15,7 @@ function ProfilePage() {
     const data = {
       image: imageRef.current.value,
       username: user.username,
+      role: user.role,
     };
 
     try {

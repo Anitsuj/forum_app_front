@@ -132,7 +132,7 @@ select option {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
   max-width: 64rem;
   margin: 0 auto;
 }
